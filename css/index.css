@@ -28,15 +28,11 @@ label {
   justify-content: flex-start;
 }
 
-div.question > code {
+div.question>code {
   display: block;
   white-space: pre-wrap;
   font-weight: bold;
   font-size: 1.2rem;
-}
-
-body {
-  margin-left: 40px;
 }
 
 .row {
@@ -52,9 +48,44 @@ label {
 }
 
 body {
+  padding-top: 2rem;
   padding-bottom: 2rem;
 }
 
 #results {
   margin-top: 1rem;
+}
+
+.d-none {
+  display: none;
+}
+
+#start-quiz {
+  margin-top: 1rem;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact {
+  margin-left: 0;
+  left: 0;
+  right: 0;
+}
+
+.header {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.quiz {
+  margin-left: 2rem;
 }
