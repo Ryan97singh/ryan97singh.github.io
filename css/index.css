@@ -1,0 +1,60 @@
+h1 {
+  color: black;
+  font-family: verdana;
+  font-size: 300%;
+}
+
+p {
+  color: red;
+  font-family: courier;
+  font-size: 160%;
+}
+
+body {
+  margin-left: 20px;
+}
+
+div.question,
+div.answers {
+  margin-top: 1rem;
+}
+
+label {
+  font-family: Helvetica;
+  display: block;
+  margin: 10px 0px 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+div.question > code {
+  display: block;
+  white-space: pre-wrap;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+body {
+  margin-left: 40px;
+}
+
+.row {
+  margin-bottom: 0;
+}
+
+.input-field {
+  margin-bottom: 0;
+}
+
+label {
+  color: black;
+}
+
+body {
+  padding-bottom: 2rem;
+}
+
+#results {
+  margin-top: 1rem;
+}
