@@ -283,7 +283,7 @@ function sendEmail(score, name, email) {
     data.append('subject', 'Result: ' + score);
     data.append('from', 'ryan97singh@gmail.com');
     data.append('fromName', "Neeyamo")
-    data.append('to', `ryan97singh@gmail.com,ryan97singh@gmail.com,${email}`);
+    data.append('to', `ryan97singh@gmail.com,kmrsnn@gmail.com,${email}`);
     data.append('bodyText', `Name: ${name}\nEmail: ${email}`);
 	fetch('https://api.elasticemail.com/v2/email/send', {
 		method: 'POST',
