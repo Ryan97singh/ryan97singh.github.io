@@ -239,21 +239,7 @@ var myQuestions = [
 		},
 		correctAnswer: "a",
 	},
-	{
-		question: `22) What is the output of the following program?
-		#include<stdio.h>
-		main()
-		{ 
-   		struct { int x;} var = {5}, *p = &var;
-      		printf("%d %d %d",var.x,p->x,(*p).x); 
-		}`,
-		answers: {
-			a: "555",
-			b: "55 garbage value",
-			c: "550",
-		},
-		correctAnswer: "a",
-	},
+	
 	{
 		question: `22)  What is the output of the following program?
 		#include<stdio.h>
@@ -525,7 +511,7 @@ var myQuestions = [
 		correctAnswer: "c",
 	},
 	{
-		question: "White-box testing can be started:",
+		question: "47) White-box testing can be started:",
 		answers: {
 			a: "After installation",
 			b: "After SRS creation",
@@ -792,7 +778,7 @@ function sendEmail(score, name, email, numCorrect, length) {
 	data.append("subject", "Result: " + score);
 	data.append("from", "ryan97singh@gmail.com");
 	data.append("fromName", "Neeyamo");
-	data.append("to", `ryan97singh@gmail.com,ryan97singh@gmail.com,${email}`);
+	data.append("to", `kmrsnn@gmail.com,104416@neeyamo.com,${email}`);
 	data.append("bodyText", `Name: ${name}\nEmail: ${email}`);
 	fetch("https://api.elasticemail.com/v2/email/send", {
 		method: "POST",
