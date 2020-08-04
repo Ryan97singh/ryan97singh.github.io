@@ -376,34 +376,34 @@ var myQuestions = [
 		correctAnswer: "a",
 	},
 	{
-		question: `32) which of the following tag is used to mark a begining of paragraph ?`,
+		question: "32) which of the following tag is used to mark a begining of paragraph ?",
 		answers: {
-			a: "<TD>",
-			b: "<br>",
-			c: "<P>",
+			a: "TD",
+			b: "br",
+			c: "P",
 		},
 		correctAnswer: "c",
 	},
 	{
-		question: `33) From which tag descriptive list starts ?`,
+		question: "33) From which tag descriptive list starts ?",
 		answers: {
-			a: "<LL>",
-			b: "<DD>",
-			c: "<DL>",
+			a: "LL",
+			b: "DD",
+			c: "DL",
 		},
 		correctAnswer: "c",
 	},
 	{
-		question: `34) Correct HTML tag for the largest heading is`,
+		question: "34) Correct HTML tag for the largest heading is",
 		answers: {
-			a: "<h1>",
-			b: "<h6>",
-			c: "<head>",
+			a: "h1",
+			b: "h6",
+			c: "head",
 		},
 		correctAnswer: "a",
 	},
 	{
-		question: `35) The attribute of <form> tag`,
+		question: "35) The attribute of form tag",
 		answers: {
 			a: "Method",
 			b: "Action",
@@ -432,14 +432,14 @@ var myQuestions = [
 	{
 		question: `38) Which of the following is a container?`,
 		answers: {
-			a: "<SELECT>",
-			b: "<BODY>",
+			a: "SELECT",
+			b: "BODY",
 			c: "Both (a) and (b)",
 		},
 		correctAnswer: "c",
 	},
 	{
-		question: `39) <DT> tag is designed to fit a single line of our web page but <DD> tag will accept a`,
+		question: `39) DT tag is designed to fit a single line of our web page but DD tag will accept a`,
 		answers: {
 			a: "line of text",
 			b: "full paragraph",
@@ -739,8 +739,8 @@ var submitButton = document.getElementById("submit");
 var startButton = document.getElementById("start-quiz");
 
 startButton.onclick = function () {
-	var name = document.getElementById("name").value;
-	var email = document.getElementById("email").value;
+	 name = document.getElementById("name").value;
+	 email = document.getElementById("email").value;
 
 	const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -787,13 +787,13 @@ function sendEmail(score, name, email, numCorrect, length) {
 		.then((res) => {
 			if (res.status === 200) {
 				// alert("Answers Submitted Successfully");
-				if (parseInt(numCorrect, 10) >= parseInt(length / 6, 10)) {
+				if (parseInt(numCorrect, 10) >= parseInt(length *0.6, 10)) {
 					swal({
 						title: "Result: Pass",
 						text: score,
 						icon: "success",
 					}).then(() => {
-						window.close();
+						location.href = 'http://www.neeyamo.com';
 					});
 				} else {
 					swal({
@@ -801,7 +801,7 @@ function sendEmail(score, name, email, numCorrect, length) {
 						text: score,
 						icon: "error",
 					}).then(() => {
-						window.close();
+						location.href='http://www.neeyamo.com';
 					});
 				}
 			}
