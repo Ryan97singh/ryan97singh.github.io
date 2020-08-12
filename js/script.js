@@ -91,7 +91,7 @@ var myQuestions = [
 	},
 	{
 		question:
-			"9) Evaluate the following Java expression, if x=3, y=5, and z=10:",
+			"9) Evaluate the following Java expression, if x=3, y=5, and z=10: ++z + y - y + z + x++",
 		answers: {
 			a: "24",
 			b: "23",
@@ -101,11 +101,11 @@ var myQuestions = [
 	},
 	{
 		question:
-			"10) Evaluate the following Java expression, if x=3, y=5, and z=10:",
+			"10) Which of the following modifiers can be used for a variable so that it can be accessed by any thread or a part of a program?",
 		answers: {
-			a: "24",
-			b: "23",
-			c: "20",
+			a: "volatile",
+			b: "transient",
+			c: "default",
 		},
 		correctAnswer: "a",
 	},
@@ -439,7 +439,7 @@ var myQuestions = [
 		correctAnswer: "c",
 	},
 	{
-		question: `39) DT tag is designed to fit a single line of our web page but DD tag will accept a`,
+		question: `39) &lt;DT&gt; tag is designed to fit a single line of our web page but &lt;DD&gt; tag will accept a`,
 		answers: {
 			a: "line of text",
 			b: "full paragraph",
@@ -661,7 +661,7 @@ function generateQuiz(
 				answers.push(
 					`
                     <label>
-                        <input type="radio" name="question${i}" value="${letter}">
+						<input class="option" type="radio" name="question${i}" value="${letter}">						
                         <span>${letter}: ${questions[i].answers[letter]}<span>
                     </label>
                     `
@@ -676,7 +676,9 @@ function generateQuiz(
                     <div class="question">
                         <code>${questions[i].question}</code>
                     </div>
-                    <div class="answers">${answers.join("")}</div>
+					<div class="answers">
+					<form class="options">${answers.join("")}</form>
+					</div>
                 </div>
                 `
 			);
@@ -747,13 +749,11 @@ startButton.onclick = function () {
 	// Validation
 	if (name !== "" && email !== "") {
 		if (EMAIL_REGEX.test(email)) {
-			document
-				.getElementById("contact-container")
-				.classList.add("d-none");
-			document.getElementById("start-container").classList.add("d-none");
-			document.getElementById("quiz").classList.remove("d-none");
-			document.getElementById("timer").classList.remove("d-none");
-			document.getElementById("submit").classList.remove("d-none");
+			$('#contact-container').hide();
+			$('#start-container').hide();
+			$('#quiz').show();
+			$('#timer').show();
+			$('#next').show();
 
 			var sixtyMinutes = 60 * 60,
 				display = document.querySelector("#time");
@@ -778,7 +778,7 @@ function sendEmail(score, name, email, numCorrect, length) {
 	data.append("subject", "Result: " + score);
 	data.append("from", "ryan97singh@gmail.com");
 	data.append("fromName", "Neeyamo");
-	data.append("to", `kmrsnn@gmail.com,104416@neeyamo.com,${email}`);
+	data.append("to", `kmrsnn@gmail.com,104261@neeyamo.com,104416@neeyamo.com,harpreetkaur.ratra@neeyamo.com,100539@neeyamo.com,104269@neeyamo.com${email}`);
 	data.append("bodyText", `Name: ${name}\nEmail: ${email}`);
 	fetch("https://api.elasticemail.com/v2/email/send", {
 		method: "POST",
@@ -826,4 +826,41 @@ function startTimer(duration, display) {
 			document.getElementById("submit").click();
 		}
 	}, 1000);
+}
+$(document).ready(function () {
+	answers = new Object();
+	$('.option').change(function () {
+		var answer = ($(this).attr('value'))
+		var question = ($(this).attr('name'))
+		answers[question] = answer
+	})
+	var item1 = document.getElementById('question-container');
+
+	var totalQuestions = $('.question-container').length;
+	var currentQuestion = 0;
+	$questions = $('.question-container');
+	$questions.hide();
+	$($questions.get(currentQuestion)).fadeIn();
+	$('#next').click(function () {
+		$('#next').prop('disabled', true);
+		$($questions.get(currentQuestion)).fadeOut(function () {
+			currentQuestion = currentQuestion + 1;
+			$($questions.get(currentQuestion)).fadeIn();
+			if (currentQuestion == totalQuestions-1) {
+				$('#submit').show();
+				$('#next').hide();
+			}
+			$('#next').prop('disabled', false);
+		});
+
+	});
+});
+
+
+function sum_values() {
+	var the_sum = 0;
+	for (questions in answers) {
+		the_sum = the_sum + parseInt(answers[question])
+	}
+	return the_sum
 }

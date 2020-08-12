@@ -55,8 +55,13 @@
             <div id="start-container" class="center">
                 <button id="start-quiz" class="btn waves-effect waves-light" type="submit" name="action">Start</button>
             </div>
-            <button id="submit" class="btn waves-effect waves-light d-none" type="submit" name="action">Get
-                Results</button>
+            <div class="d-flex-center">
+                <button id="submit" class="btn waves-effect waves-light d-none" type="submit" name="action">Get
+                    Results</button>
+                <button id="next" class="btn waves-effect waves-light d-none" type="submit" name="action"
+                    onclick="sum_values()">Next</button>
+                    
+            </div>
         </div>
     </div>
     <div class="row">
@@ -64,9 +69,11 @@
             <div id="results"></div>
         </div>
     </div>
-    <script src="./js/script.js"></script>
+    
+    <script src="./js/jquery-3.5.1.js"></script>
     <script src="./js/materialize.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

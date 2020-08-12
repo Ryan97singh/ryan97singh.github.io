@@ -89,3 +89,9 @@ body {
 .quiz {
   margin-left: 2rem;
 }
+
+.d-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
