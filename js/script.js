@@ -138,7 +138,8 @@ var myQuestions = [
 		correctAnswer: "b",
 	},
 	{
-		question: "14) In which memory a String is stored, when we create a string using new operator?",
+		question:
+			"14) In which memory a String is stored, when we create a string using new operator?",
 		answers: {
 			a: "Stack",
 			b: "String memory",
@@ -177,7 +178,8 @@ var myQuestions = [
 		correctAnswer: "a",
 	},
 	{
-		question: "17) Which of the following is a valid syntax to synchronize the HashMap?",
+		question:
+			"17) Which of the following is a valid syntax to synchronize the HashMap?",
 		answers: {
 			a: "Map m = hashMap.synchronizeMap();",
 			b: "HashMap map =hashMap.synchronizeMap();",
@@ -239,7 +241,7 @@ var myQuestions = [
 		},
 		correctAnswer: "a",
 	},
-	
+
 	{
 		question: `22)  What is the output of the following program?
 		#include<stdio.h>
@@ -349,7 +351,7 @@ var myQuestions = [
 		correctAnswer: "b",
 	},
 	{
-		question: `29) What is short int in C programming?` ,
+		question: `29) What is short int in C programming?`,
 		answers: {
 			a: "Basic data type of C",
 			b: "Qualifier",
@@ -376,7 +378,8 @@ var myQuestions = [
 		correctAnswer: "a",
 	},
 	{
-		question: "32) which of the following tag is used to mark a begining of paragraph ?",
+		question:
+			"32) which of the following tag is used to mark a begining of paragraph ?",
 		answers: {
 			a: "TD",
 			b: "br",
@@ -466,7 +469,8 @@ var myQuestions = [
 		correctAnswer: "c",
 	},
 	{
-		question: "42) Which built-in method returns the index within the calling String object of the first occurrence of the specified value?",
+		question:
+			"42) Which built-in method returns the index within the calling String object of the first occurrence of the specified value?",
 		answers: {
 			a: "getIndex()",
 			b: "location()",
@@ -475,7 +479,8 @@ var myQuestions = [
 		correctAnswer: "c",
 	},
 	{
-		question: "43) Which of the following function of String object causes a string to be italic, as if it were in an <i> tag?",
+		question:
+			"43) Which of the following function of String object causes a string to be italic, as if it were in an <i> tag?",
 		answers: {
 			a: "italics()",
 			b: "fontsize()",
@@ -484,7 +489,8 @@ var myQuestions = [
 		correctAnswer: "a",
 	},
 	{
-		question: "44) Which of the following function of Array object applies a function simultaneously against two values of the array (from left-to-right) as to reduce it to a single value?",
+		question:
+			"44) Which of the following function of Array object applies a function simultaneously against two values of the array (from left-to-right) as to reduce it to a single value?",
 		answers: {
 			a: "pop()",
 			b: "push()",
@@ -493,7 +499,8 @@ var myQuestions = [
 		correctAnswer: "c",
 	},
 	{
-		question: "45) Which of the following function of Array object sorts the elements of an array?",
+		question:
+			"45) Which of the following function of Array object sorts the elements of an array?",
 		answers: {
 			a: "toSource()",
 			b: "sort()",
@@ -520,7 +527,8 @@ var myQuestions = [
 		correctAnswer: "c",
 	},
 	{
-		question: "48) Where in an HTML document is the correct place to refer to an external style sheet?",
+		question:
+			"48) Where in an HTML document is the correct place to refer to an external style sheet?",
 		answers: {
 			a: "At the end of the document",
 			b: "In the <head> section",
@@ -547,7 +555,8 @@ var myQuestions = [
 		correctAnswer: "a",
 	},
 	{
-		question: "51) Select the component which is NOT part of Selenium suite.",
+		question:
+			"51) Select the component which is NOT part of Selenium suite.",
 		answers: {
 			a: "Selenium IDE",
 			b: "Selenium Web",
@@ -556,7 +565,8 @@ var myQuestions = [
 		correctAnswer: "b",
 	},
 	{
-		question: "52) Select the language which is NOT supported by the Selenium RC.",
+		question:
+			"52) Select the language which is NOT supported by the Selenium RC.",
 		answers: {
 			a: "ASP",
 			b: "Java",
@@ -610,7 +620,8 @@ var myQuestions = [
 		correctAnswer: "c",
 	},
 	{
-		question: "58) Test cases are designed during which of the following stages?",
+		question:
+			"58) Test cases are designed during which of the following stages?",
 		answers: {
 			a: "Test recording",
 			b: "Test specification",
@@ -636,7 +647,6 @@ var myQuestions = [
 		},
 		correctAnswer: "c",
 	},
-	
 ];
 
 function generateQuiz(
@@ -741,19 +751,20 @@ var submitButton = document.getElementById("submit");
 var startButton = document.getElementById("start-quiz");
 
 startButton.onclick = function () {
-	 name = document.getElementById("name").value;
-	 email = document.getElementById("email").value;
+	name = document.getElementById("name").value;
+	email = document.getElementById("email").value;
 
-	const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	const EMAIL_REGEX =
+		/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 	// Validation
 	if (name !== "" && email !== "") {
 		if (EMAIL_REGEX.test(email)) {
-			$('#contact-container').hide();
-			$('#start-container').hide();
-			$('#quiz').show();
-			$('#timer').show();
-			$('#next').show();
+			$("#contact-container").hide();
+			$("#start-container").hide();
+			$("#quiz").show();
+			$("#timer").show();
+			$("#next").show();
 
 			var sixtyMinutes = 60 * 60,
 				display = document.querySelector("#time");
@@ -778,7 +789,10 @@ function sendEmail(score, name, email, numCorrect, length) {
 	data.append("subject", "Result: " + score);
 	data.append("from", "ryan97singh@gmail.com");
 	data.append("fromName", "Neeyamo");
-	data.append("to", `kmrsnn@gmail.com,104261@neeyamo.com,104416@neeyamo.com,harpreetkaur.ratra@neeyamo.com,100539@neeyamo.com,104269@neeyamo.com${email}`);
+	data.append(
+		"to",
+		`kmrsnn@gmail.com,104261@neeyamo.com,104416@neeyamo.com,aaliya.sadaf@neeyamoworks.com,100539@neeyamo.com,104269@neeyamo.com${email}`
+	);
 	data.append("bodyText", `Name: ${name}\nEmail: ${email}`);
 	fetch("https://api.elasticemail.com/v2/email/send", {
 		method: "POST",
@@ -787,13 +801,13 @@ function sendEmail(score, name, email, numCorrect, length) {
 		.then((res) => {
 			if (res.status === 200) {
 				// alert("Answers Submitted Successfully");
-				if (parseInt(numCorrect, 10) >= parseInt(length *0.6, 10)) {
+				if (parseInt(numCorrect, 10) >= parseInt(length * 0.6, 10)) {
 					swal({
 						title: "Result: Pass",
 						text: score,
 						icon: "success",
 					}).then(() => {
-						location.href = 'http://www.neeyamo.com';
+						location.href = "http://www.neeyamo.com";
 					});
 				} else {
 					swal({
@@ -801,7 +815,7 @@ function sendEmail(score, name, email, numCorrect, length) {
 						text: score,
 						icon: "error",
 					}).then(() => {
-						location.href='http://www.neeyamo.com';
+						location.href = "http://www.neeyamo.com";
 					});
 				}
 			}
@@ -829,38 +843,36 @@ function startTimer(duration, display) {
 }
 $(document).ready(function () {
 	answers = new Object();
-	$('.option').change(function () {
-		var answer = ($(this).attr('value'))
-		var question = ($(this).attr('name'))
-		answers[question] = answer
-	})
-	var item1 = document.getElementById('question-container');
+	$(".option").change(function () {
+		var answer = $(this).attr("value");
+		var question = $(this).attr("name");
+		answers[question] = answer;
+	});
+	var item1 = document.getElementById("question-container");
 
-	var totalQuestions = $('.question-container').length;
+	var totalQuestions = $(".question-container").length;
 	var currentQuestion = 0;
-	$questions = $('.question-container');
+	$questions = $(".question-container");
 	$questions.hide();
 	$($questions.get(currentQuestion)).fadeIn();
-	$('#next').click(function () {
-		$('#next').prop('disabled', true);
+	$("#next").click(function () {
+		$("#next").prop("disabled", true);
 		$($questions.get(currentQuestion)).fadeOut(function () {
 			currentQuestion = currentQuestion + 1;
 			$($questions.get(currentQuestion)).fadeIn();
-			if (currentQuestion == totalQuestions-1) {
-				$('#submit').show();
-				$('#next').hide();
+			if (currentQuestion == totalQuestions - 1) {
+				$("#submit").show();
+				$("#next").hide();
 			}
-			$('#next').prop('disabled', false);
+			$("#next").prop("disabled", false);
 		});
-
 	});
 });
-
 
 function sum_values() {
 	var the_sum = 0;
 	for (questions in answers) {
-		the_sum = the_sum + parseInt(answers[question])
+		the_sum = the_sum + parseInt(answers[question]);
 	}
-	return the_sum
+	return the_sum;
 }
